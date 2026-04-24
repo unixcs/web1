@@ -1,0 +1,286 @@
+:root {
+  --page-bg: #f1f1f1;
+  --card-bg: #ffffff;
+  --text-main: #000000;
+  --text-muted: #666666;
+  --text-footer: #999999;
+  --line: #d4d4d4;
+  --accent: #26fd00;
+  --shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+.page {
+  background: var(--page-bg);
+  min-height: 100vh;
+  padding: 12px 0 28px;
+}
+
+.page__shell {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.hero {
+  padding: 6px 0 14px;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.ticket {
+  position: relative;
+  width: 100%;
+}
+
+.ticket__border {
+  height: 9px;
+  background-image: radial-gradient(circle at 3.5px 9px, transparent 4px, #cfcfcf 4px, #cfcfcf 5px, transparent 5px);
+  background-size: 16px 9px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.ticket__border--bottom {
+  transform: rotate(180deg);
+}
+
+.ticket__body {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.ticket__perforation {
+  position: relative;
+  height: 13px;
+  border-top: 1px dashed var(--line);
+  background: var(--card-bg);
+}
+
+.ticket__perforation::before,
+.ticket__perforation::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--page-bg);
+  transform: translateY(-50%);
+}
+
+.ticket__perforation::before {
+  left: -7px;
+}
+
+.ticket__perforation::after {
+  right: -7px;
+}
+
+.product-card {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.product-card__image {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  object-fit: cover;
+}
+
+.product-card__content {
+  min-width: 0;
+  flex: 1;
+}
+
+.product-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.product-card__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.article {
+  padding: 10px 12px 14px;
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  word-break: break-word;
+}
+
+.article p + p {
+  margin-top: 8px;
+}
+
+.article__highlight {
+  color: rgb(57, 108, 237);
+  font-weight: 700;
+}
+
+.article mark {
+  background: #fff200;
+  color: inherit;
+  padding: 0;
+}
+
+.article__qr-wrap {
+  margin: 14px 0 10px;
+}
+
+.article__qr {
+  width: 100%;
+  max-width: 320px;
+}
+
+.note {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.note__heading-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.note__heading-wrap {
+  flex: 0 0 auto;
+}
+
+.note__title {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.note__accent {
+  display: block;
+  height: 7px;
+  margin-top: -7px;
+  background: var(--accent);
+}
+
+.note__line {
+  flex: 1;
+  height: 8px;
+  margin-top: 8px;
+  background-image: repeating-linear-gradient(90deg, #c6c6c6 0 5px, transparent 5px 10px);
+  opacity: 0.8;
+}
+
+.note__text {
+  margin-top: 12px;
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ticket--top-spacer + .ticket .ticket__body {
+  border-top: 0;
+}
+
+.footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--text-footer);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 20px 0 34px;
+  }
+
+  .page__shell {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding-bottom: 18px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .product-card,
+  .note {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .article {
+    padding: 10px 14px 16px;
+  }
+
+  .footer {
+    margin-top: 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .page__shell {
+    padding: 0 10px;
+  }
+
+  .hero__title {
+    font-size: 24px;
+  }
+
+  .article {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+
+  .note__text,
+  .footer {
+    font-size: 12px;
+  }
+}
